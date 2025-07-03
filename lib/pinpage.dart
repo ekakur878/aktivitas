@@ -1,4 +1,4 @@
-import 'package:aktivitas/halaman1.dart';
+import 'package:aktivitas/secretpage.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -46,7 +46,7 @@ class _PinPageState extends State<PinPage> {
       if (pinController.text == savedPin) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => const WelcomeScreen()),
+          MaterialPageRoute(builder: (context) => const secretpage()),
         );
       } else {
         ScaffoldMessenger.of(context).showSnackBar(

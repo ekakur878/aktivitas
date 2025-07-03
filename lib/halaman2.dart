@@ -1,3 +1,4 @@
+import 'package:aktivitas/pinpage.dart';
 import 'package:flutter/material.dart';
 import 'package:aktivitas/halaman3.dart';
 import 'package:aktivitas/halaman4.dart';
@@ -16,6 +17,7 @@ class _SecondScreenState extends State<SecondScreen> {
   final List<Widget> _pages = [
     const ProductListPage(),
     const SushiList(),
+    const PinPage(),
     const ThirdScreen(),
     const ProfilePage(),
   ];
@@ -39,6 +41,7 @@ class _SecondScreenState extends State<SecondScreen> {
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Beranda'),
           BottomNavigationBarItem(icon: Icon(Icons.list), label: 'List'),
+          BottomNavigationBarItem(icon: Icon(Icons.lock), label: 'Secret Page'),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
             label: 'Keranjang',
@@ -155,7 +158,7 @@ class PromoItem extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => listSushi()),
+          MaterialPageRoute(builder: (context) => ListSushi()),
         );
       },
       child: Card(

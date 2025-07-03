@@ -1,5 +1,4 @@
 import 'package:aktivitas/halaman1.dart';
-import 'package:aktivitas/pinpage.dart';
 import 'package:aktivitas/registrasi.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -27,7 +26,7 @@ class _SplashscreenState extends State<Splashscreen>
           context,
           MaterialPageRoute(
             builder: (build) {
-              return PinPage();
+              return WelcomeScreen();
             },
           ),
         );

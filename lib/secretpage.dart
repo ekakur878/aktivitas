@@ -2,14 +2,14 @@ import 'package:aktivitas/api/apicontroller.dart';
 import 'package:flutter/material.dart';
 import 'package:aktivitas/widget/sushilist.dart';
 
-class SushiList extends StatefulWidget {
-  const SushiList({super.key});
+class secretpage extends StatefulWidget {
+  const secretpage({super.key});
 
   @override
-  State<SushiList> createState() => _SushiListState();
+  State<secretpage> createState() => _secretpageState();
 }
 
-class _SushiListState extends State<SushiList> {
+class _secretpageState extends State<secretpage> {
   Future<List<dynamic>>? _data;
 
   @override
@@ -21,6 +21,13 @@ class _SushiListState extends State<SushiList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+        ),
+        title: const Text('Secret Page'),
+      ),
       body: Padding(
         padding: const EdgeInsets.all(10),
         child: FutureBuilder<List<dynamic>>(
@@ -41,8 +48,9 @@ class _SushiListState extends State<SushiList> {
                 itemBuilder: (context, index) {
                   final item = data[index];
                   return SushiListWidget(
-                    image: 'https://saiyaapi.site/${item['photo']}',
-                    desc: item['description'] ?? 'No description available',
+                    // image: 'https://picsum.photos/${item['photo']}',
+                    image: item['download_url'] ?? '',
+                    desc: item['author'] ?? 'No author available',
                   );
                 },
               );
